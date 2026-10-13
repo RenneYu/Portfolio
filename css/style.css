@@ -70,3 +70,7 @@ footer{text-align:center;padding:40px;background:var(--ink);color:#fff;opacity:.
 .contact{display:block;padding:10px 14px;border-radius:12px;background:var(--bg);border:2px solid var(--ink);font-weight:600;font-size:.95rem;transition:background .25s,transform .25s}
 .contact:hover{background:var(--b);transform:translateX(4px)}
 @media(max-width:600px){.about{padding:60px 5vw;background:linear-gradient(180deg,#2a2158 0%,#1e1b3a 28%,var(--bg) 28%)}}
+
+.skill-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.skill-list li{display:block;padding:8px 14px;background:var(--bg);border:2px solid var(--ink);border-radius:12px;font-size:.92rem;font-weight:600;transition:background .25s,transform .25s}
+.skill-list li:hover{background:var(--c);transform:translateX(4px)}
