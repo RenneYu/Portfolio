@@ -41,3 +41,32 @@ footer{text-align:center;padding:40px;background:var(--ink);color:#fff;opacity:.
 .x{float:right;background:var(--a);color:#fff;border:0;width:40px;height:40px;border-radius:50%;font-size:24px;cursor:pointer;margin-bottom:8px;transition:transform .3s}.x:hover{transform:rotate(90deg)}
 @media(max-width:600px){nav div{display:none}section{padding:60px 5vw}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* —— About —— */
+.aka{font-size:1.35rem;font-weight:700;opacity:.85;margin:-.4em 0 .5em;letter-spacing:.15em}
+.roles{font-size:1.05rem;opacity:.9;margin-bottom:10px;color:var(--c)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn-ghost{background:transparent;border:2px solid #fff;color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--ink)}
+
+.about{padding:90px 6vw;background:linear-gradient(180deg,#2a2158 0%,#1e1b3a 40%,var(--bg) 40%);color:#fff}
+.about h2{color:#fff}
+.about h2:after{background:var(--a)}
+.about > .desc{color:#fffc;max-width:640px}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:36px}
+.about-card{background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:22px;padding:22px 22px 26px;box-shadow:0 8px 0 var(--c);transition:transform .35s cubic-bezier(.2,1.6,.4,1),box-shadow .35s}
+.about-card:hover{transform:translateY(-6px) rotate(.5deg);box-shadow:0 14px 0 var(--d)}
+.about-card h3{font-size:1.15rem;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:var(--bg);border:2px solid var(--ink);border-radius:999px;padding:6px 14px;font-size:.88rem;font-weight:600;transition:transform .25s,background .25s}
+.chips span:hover{background:var(--c);transform:scale(1.06) rotate(-2deg)}
+.exp{list-style:none;padding:0;display:flex;flex-direction:column;gap:16px}
+.exp li{display:grid;gap:2px;padding-left:14px;border-left:4px solid var(--a)}
+.exp .co{opacity:.75;font-size:.92rem}
+.exp .yr{font-size:.82rem;font-weight:700;color:var(--d)}
+.avail{font-size:1.15rem;margin-bottom:8px}
+.avail-loc{opacity:.75;line-height:1.5;font-size:.95rem}
+.contact-card{display:flex;flex-direction:column;gap:10px}
+.contact{display:block;padding:10px 14px;border-radius:12px;background:var(--bg);border:2px solid var(--ink);font-weight:600;font-size:.95rem;transition:background .25s,transform .25s}
+.contact:hover{background:var(--b);transform:translateX(4px)}
+@media(max-width:600px){.about{padding:60px 5vw;background:linear-gradient(180deg,#2a2158 0%,#1e1b3a 28%,var(--bg) 28%)}}
