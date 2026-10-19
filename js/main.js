@@ -1,4 +1,4 @@
-const YT={"macd-intro-voiced":"08Tn_2KI5uw","rsi-intro-voiced":"3U1ybHTFDHU","bb-intro-voiced":"USRKr7P_21w","kdj-intro-voiced":"xMu--z-zBCI","how-economy-works":"dmtGmFmPsg8","why-invest":"ck0ZL6gwHrA","art-history-pompeii":"sO6F-qWzho0","tech-history-clock":"RSx4QGjHAOI","blue-spiral":"yNVckJW-zmQ","code-film-lab":"8FbM3OtSMmI","contour-ball":"Utve96oRW6Q","contour-side-v2":"wL9KqW8grTA","showcase":"CRSaRzKRNh0"};
+const YT={"macd-intro-voiced":"08Tn_2KI5uw","rsi-intro-voiced":"3U1ybHTFDHU","bb-intro-voiced":"USRKr7P_21w","kdj-intro-voiced":"xMu--z-zBCI","how-economy-works":"dmtGmFmPsg8","why-invest":"ck0ZL6gwHrA","art-history-pompeii":"sO6F-qWzho0","tech-history-clock":"RSx4QGjHAOI","blue-spiral":"yNVckJW-zmQ","code-film-lab":"8FbM3OtSMmI","contour-ball":"Utve96oRW6Q","contour-side-v2":"wL9KqW8grTA","showcase":"CRSaRzKRNh0","transformer-text-vectors":"iVavhvZrVvY"};
 const S=[{id:"s1",t:"圖表技術指標系列",d:"把交易指標拆解成一步步的動態圖解。",w:[
 ["macd-intro-voiced","MACD 介紹（配音版）","以香港用字講解 MACD 指標的動態資訊圖解短片，附配音。","2:45"],
 ["rsi-intro-voiced","RSI 介紹（配音版）","講解 RSI 相對強弱指標的動態資訊圖解短片，附配音。","2:09"],
@@ -14,7 +14,9 @@ const S=[{id:"s1",t:"圖表技術指標系列",d:"把交易指標拆解成一步
 ["code-film-lab","程式碼電影實驗室：資源不夠，就得 choose","以程式碼編輯器畫面講述「選擇與取捨」的實驗短片。","1:18"],
 ["contour-ball","等高線球體","以等高線描繪旋轉球體的程式動畫。","0:12"],
 ["contour-side-v2","等高線側面 v2","等高線線條側面造型動畫第二版。","0:12"],
-["showcase","動畫技巧展示","程式碼動畫技巧綜合展示。","0:08"]]}];
+["showcase","動畫技巧展示","程式碼動畫技巧綜合展示。","0:08"]]},
+{id:"s4",t:"科普系列",d:"用動畫把抽象概念講清楚。",w:[
+["transformer-text-vectors","Transformer 中的文字向量","用動畫講解 Transformer 如何把文字轉成向量，並在語意空間裡表示意義。","9:10"]]}];
 const m=document.getElementById("works");
 S.forEach(s=>{const e=document.createElement("section");e.id=s.id;
 e.innerHTML=`<h2 class="reveal">${s.t}</h2><p class="desc reveal">${s.d}</p><div class="grid">${s.w.map(([f,t,d,du],i)=>
