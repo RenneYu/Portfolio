@@ -1,4 +1,4 @@
-const YT={"macd-intro-voiced":"08Tn_2KI5uw","rsi-intro-voiced":"3U1ybHTFDHU","bb-intro-voiced":"USRKr7P_21w","kdj-intro-voiced":"xMu--z-zBCI","how-economy-works":"dmtGmFmPsg8","why-invest":"ck0ZL6gwHrA","art-history-pompeii":"sO6F-qWzho0","tech-history-clock":"RSx4QGjHAOI","blue-spiral":"yNVckJW-zmQ","code-film-lab":"8FbM3OtSMmI","contour-ball":"Utve96oRW6Q","contour-side-v2":"wL9KqW8grTA","showcase":"CRSaRzKRNh0","transformer-text-vectors":"iVavhvZrVvY"};
+const YT={"macd-intro-voiced":"08Tn_2KI5uw","rsi-intro-voiced":"3U1ybHTFDHU","bb-intro-voiced":"USRKr7P_21w","kdj-intro-voiced":"xMu--z-zBCI","how-economy-works":"dmtGmFmPsg8","why-invest":"ck0ZL6gwHrA","art-history-pompeii":"sO6F-qWzho0","tech-history-clock":"RSx4QGjHAOI","blue-spiral":"yNVckJW-zmQ","code-film-lab":"8FbM3OtSMmI","contour-ball":"Utve96oRW6Q","contour-side-v2":"wL9KqW8grTA","showcase":"CRSaRzKRNh0","transformer-text-vectors":"iVavhvZrVvY","ff-wayne-sir-success":"GZG0LgPGGMw","ff-currency-pair-secret":"GW9yr66BcHc","ff-crystal-ball":"1XwMElKISTQ","ff-algo-trader-world":"sGMOPJc7-1s"};
 const S=[{id:"s1",t:"圖表技術指標系列",d:"把交易指標拆解成一步步的動態圖解。",w:[
 ["macd-intro-voiced","MACD 介紹（配音版）","以香港用字講解 MACD 指標的動態資訊圖解短片，附配音。","2:45"],
 ["rsi-intro-voiced","RSI 介紹（配音版）","講解 RSI 相對強弱指標的動態資訊圖解短片，附配音。","2:09"],
@@ -16,7 +16,12 @@ const S=[{id:"s1",t:"圖表技術指標系列",d:"把交易指標拆解成一步
 ["contour-side-v2","等高線側面 v2","等高線線條側面造型動畫第二版。","0:12"],
 ["showcase","動畫技巧展示","程式碼動畫技巧綜合展示。","0:08"]]},
 {id:"s4",t:"科普系列",d:"用動畫把抽象概念講清楚。",w:[
-["transformer-text-vectors","Transformer 中的文字向量","用動畫講解 Transformer 如何把文字轉成向量，並在語意空間裡表示意義。","9:10"]]}];
+["transformer-text-vectors","Transformer 中的文字向量","用動畫講解 Transformer 如何把文字轉成向量，並在語意空間裡表示意義。","9:10"]]},
+{id:"s5",t:"Forex Forest 系列",d:"在 Forex Forest 任職影片剪輯時製作的商業短片。",w:[
+["ff-wayne-sir-success","問問 Wayne Sir：想成功，靠打工？","【問問Wayne Sir】探討成功路徑與 AI 如何改變人生選擇的商業短片。","5:06"],
+["ff-currency-pair-secret","為何高手總能預見貨幣對的秘密關係？","講解選對貨幣對與交易邏輯的 Forex Forest 商業短片。","7:13"],
+["ff-crystal-ball","市場水晶球：看穿走勢？","Wayne Sir 講解市場走勢預判與「水晶球」真身的商業短片。","2:53"],
+["ff-algo-trader-world","Algo Trader 世界隨行","AI 交易與環遊世界生活方式的 Forex Forest 宣傳短片。","3:36"]]}];
 const m=document.getElementById("works");
 S.forEach(s=>{const e=document.createElement("section");e.id=s.id;
 e.innerHTML=`<h2 class="reveal">${s.t}</h2><p class="desc reveal">${s.d}</p><div class="grid">${s.w.map(([f,t,d,du],i)=>
