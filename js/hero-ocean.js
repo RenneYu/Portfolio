@@ -56,7 +56,7 @@ function start(hero) {
   credit.href = 'https://github.com/Humpalumps/Ultra-Water';
   credit.target = '_blank';
   credit.rel = 'noopener';
-  credit.textContent = '海面 · Ultra Water';
+  credit.textContent = '海面 · 即時演算 · Ultra Water';
   stage.appendChild(credit);
 
   let renderer;
@@ -187,6 +187,35 @@ function start(hero) {
     camera.position.y += Math.sin(e * Math.PI) * 80;
     camera.lookAt(look);
   }
+  // Morning at the ends, golden dusk in the middle, so the 20s loop is seamless.
+  const DAY = 20;
+  let dayStamp = -1;
+  const lerp = (a, b, t) => a + (b - a) * t;
+  function applyDay(t) {
+    const k = 0.5 - 0.5 * Math.cos(((t % DAY) / DAY) * Math.PI * 2);
+    const elev = lerp(58, 6, k);
+    const az = lerp(128, 220, k);
+    sky.params.elevation = elev;
+    sky.params.azimuth = az;
+    sky.params.turbidity = lerp(1.4, 4, k);
+    sky.params.rayleigh = lerp(1, 1.35, k);
+    sky.params.cloudCoverage = lerp(0.1, 0.34, k);
+    sky.params.sunIntensity = lerp(12, 7, k);
+    if (dayStamp < 0 || t - dayStamp >= 0.12) {
+      sky.update();
+      dayStamp = t;
+    } else {
+      sky.sunDir.setFromSphericalCoords(1, THREE.MathUtils.degToRad(90 - elev), THREE.MathUtils.degToRad(az));
+    }
+    sunLight.position.copy(sky.sunDir).multiplyScalar(2000);
+    const sx = Math.max(sky.sunColor.x, 1e-4);
+    sunLight.color.setRGB(sky.sunColor.x / sx, sky.sunColor.y / sx, sky.sunColor.z / sx);
+    sunLight.intensity = Math.PI * Math.min(sx, 8);
+    surface.uniforms.uAbsorption.value.set(lerp(0.5, 0.1, k), lerp(0.06, 0.28, k), lerp(0.04, 0.95, k));
+    surface.uniforms.uScatterColor.value.setRGB(lerp(0.01, 0.16, k), lerp(0.095, 0.045, k), lerp(0.12, 0.012, k));
+    surface.uniforms.uFoamTint.value.setRGB(lerp(0.9, 0.98, k), lerp(0.95, 0.64, k), lerp(0.98, 0.38, k));
+    stage.dataset.elev = String(Math.round(elev));
+  }
 
   const post = new PostFX(renderer);
   post.params.bloomStrength = 0;
@@ -239,6 +268,7 @@ function start(hero) {
     const dt = Math.min(0.05, Math.max(0, (now - last) / 1000));
     last = now;
     elapsed += dt;
+    applyDay(elapsed);
     if (mode === 'move') {
       move = Math.min(1, move + dt / MOVE);
       applyMove(move);

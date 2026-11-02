@@ -29,7 +29,7 @@ const S=[{id:"s1",t:"圖表技術指標系列",d:"把交易指標拆解成一步
 ["contour-side-v2","等高線側面 v2","等高線線條側面造型動畫第二版。","0:12"],
 ["showcase","動畫技巧展示","程式碼動畫技巧綜合展示。","0:08"]]}];
 const TOOL={
-grok:{name:"Grok Bot",src:"media/icons/grok.png"},
+grok:{name:"Grok Bot",src:"media/icons/grok.png",dark:1},
 ae:{name:"After Effects",src:"media/icons/after-effects.svg"},
 pr:{name:"Premiere Pro",src:"media/icons/premiere-pro.svg"},
 comfy:{name:"ComfyUI",src:"media/icons/comfyui.png"},
@@ -37,7 +37,7 @@ minimax:{name:"MiniMax (H3)",src:"media/icons/minimax.svg"},
 seedance:{name:"Seedance",badge:"Sd",color:"#3C8CFF"}
 };
 const SERIES_TOOLS={s1:["grok","ae","pr"],s2:["grok","ae","pr"],s4:["grok","ae","pr"],s5:["ae","pr"],s6:["comfy","seedance","minimax","grok","ae","pr"]};
-function toolsHtml(ids){if(!ids||!ids.length)return "";return `<span class="tools reveal">${ids.map(id=>{const t=TOOL[id];const tip=t.name.replaceAll('"','');if(t.badge)return `<span class="tool" data-tip="${tip}"><span class="tool-badge" style="--badge:${t.color}" role="img" aria-label="${tip}">${t.badge}</span></span>`;return `<span class="tool" data-tip="${tip}"><img src="${t.src}" alt="${tip}"></span>`}).join("")}</span>`}
+function toolsHtml(ids){if(!ids||!ids.length)return "";return `<span class="tools reveal">${ids.map(id=>{const t=TOOL[id];const tip=t.name.replaceAll('"','');if(t.badge)return `<span class="tool" data-tip="${tip}"><span class="tool-badge" style="--badge:${t.color}" role="img" aria-label="${tip}">${t.badge}</span></span>`;return `<span class="tool" data-tip="${tip}"><img class="${t.dark?"on-dark":""}" src="${t.src}" alt="${tip}"></span>`}).join("")}</span>`}
 const m=document.getElementById("works");
 S.forEach(s=>{const e=document.createElement("section");e.id=s.id;e.className="series";
 const cards=s.w.map(([f,t,d,du],i)=>`<article class="card reveal" style="transition-delay:${i*60}ms" data-f="${f}" data-t="${t}" data-d="${d}" tabindex="0"><div class="thumb"><img loading="lazy" src="media/${f}_thumb.jpg" alt="${t}"><span class="play">▶</span><span class="dur">${du}</span></div><div class="info"><h3>${t}</h3><p>${d}</p></div></article>`).join("");

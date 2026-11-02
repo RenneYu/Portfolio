@@ -36,6 +36,7 @@ section:nth-child(2) h2:after{background:var(--b)}section:nth-child(3) h2:after{
 .tools{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 2px;align-items:center}
 .tool{position:relative;display:inline-grid}
 .tool img,.tool-badge{width:28px;height:28px;border-radius:8px;border:2px solid var(--ink);background:#fff;box-shadow:0 2px 0 var(--ink);object-fit:contain;padding:2px}
+.tool img.on-dark{background:#16303a;padding:1px}
 .tool-badge{display:grid;place-items:center;padding:0;color:#fff;background:var(--badge,#1c1c1c);font-size:.62rem;font-weight:900;letter-spacing:-.04em}
 .tool:hover::after,.tool:focus-visible::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 6px);transform:translateX(-50%);background:var(--ink);color:#fff;font-size:.72rem;font-weight:700;line-height:1;padding:5px 8px;border-radius:8px;white-space:nowrap;z-index:4;pointer-events:none}
 .series .desc{margin-bottom:14px}
