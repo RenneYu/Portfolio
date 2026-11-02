@@ -5,7 +5,7 @@ import { FLOAT_SHADOW_GLSL } from '../scene/floaterShadow.js';
 // Camera-centred polar grid. Ring radii grow geometrically so cells stay square and
 // screen density stays ~constant. Displacement is band-limited to the local vertex
 // spacing (textureLod), which is what kills swimming - no clipmap snapping needed.
-const ANGULAR = 384;
+const ANGULAR = 192;
 const HIGH_CAMERA = 60;  // m: above this a half-density grid is used (waves there are sub-pixel)
 const INNER = 1;        // m, scaled by camera height
 const OUTER = 3000;     // m, then one flat skirt

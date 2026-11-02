@@ -242,7 +242,7 @@ export function createTerrain({ sky, caustics, floatShadow, water, absorption, r
     uFogDensity: { value: 1 / 18000 },
   };
 
-  const { geometry } = buildTerrain(384);
+  const { geometry } = buildTerrain(192);
   const groundMat = new THREE.MeshStandardMaterial({ roughness: 0.92, metalness: 0, envMapIntensity: 0.9 });
   patch(groundMat, uniforms, 'terrain');
   const ground = new THREE.Mesh(geometry, groundMat);

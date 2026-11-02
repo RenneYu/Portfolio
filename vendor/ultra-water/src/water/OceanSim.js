@@ -7,8 +7,8 @@ import { FullscreenQuad, rawPass } from '../engine/fullscreen.js';
 // Slopes are divided out at full resolution so their mips give mean + second moment
 // (slope variance -> roughness, LEAN style).
 
-export const N = 256;
-const LOG_N = 8;
+export const N = 128;
+const LOG_N = 7;
 // last cascade is the gravity-capillary detail layer; 12/2.1 is non-integer so tiles don't align
 export const CASCADE_LENGTHS = [600, 85, 12, 2.1];
 const G = 9.81;

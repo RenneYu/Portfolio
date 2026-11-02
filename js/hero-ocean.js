@@ -86,7 +86,6 @@ function start(hero) {
   renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
 
   try {
-  const coarse = matchMedia('(pointer: coarse)').matches;
   const camera = new THREE.PerspectiveCamera(46, 1, 0.5, 80000);
   const look = new THREE.Vector3();
 
@@ -110,7 +109,7 @@ function start(hero) {
   surface.uniforms.uAbsorption.value.fromArray(PURPLE.absorption);
   surface.uniforms.uScatterColor.value.fromArray(PURPLE.scatter);
   surface.uniforms.uFoamTint.value.fromArray(PURPLE.foam);
-  surface.uniforms.uGlint.value = 0.45;
+  surface.uniforms.uGlint.value = 0;
 
   // Repo shoreline: island mesh, wet sand, and the swash film (waves running up the beach).
   // Caustic maps stay neutral; the hero does not run the caustic splat pass.
@@ -196,8 +195,7 @@ function start(hero) {
   function resize() {
     const w = Math.max(1, stage.clientWidth);
     const h = Math.max(1, stage.clientHeight);
-    const cap = coarse ? 1 : 1.25;
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, cap));
+    renderer.setPixelRatio(1);
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();

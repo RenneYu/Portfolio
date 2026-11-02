@@ -1,6 +1,18 @@
 const YT={"macd-intro-voiced":"08Tn_2KI5uw","rsi-intro-voiced":"3U1ybHTFDHU","bb-intro-voiced":"USRKr7P_21w","kdj-intro-voiced":"xMu--z-zBCI","how-economy-works":"dmtGmFmPsg8","why-invest":"ck0ZL6gwHrA","art-history-pompeii":"sO6F-qWzho0","tech-history-clock":"RSx4QGjHAOI","blue-spiral":"yNVckJW-zmQ","code-film-lab":"8FbM3OtSMmI","contour-ball":"Utve96oRW6Q","contour-side-v2":"wL9KqW8grTA","showcase":"CRSaRzKRNh0","transformer-text-vectors":"iVavhvZrVvY","ff-wayne-sir-success":"GZG0LgPGGMw","ff-currency-pair-secret":"GW9yr66BcHc","ff-crystal-ball":"1XwMElKISTQ","ff-algo-trader-world":"sGMOPJc7-1s","ff-live-s10-queen-drive":"UVXkoMvYN7Q","ff-live-moodys-downgrade":"iqsyiPffJC8","ff-short-mona-freedom":"KOefpYkdqA4","ff-short-142-return":"ShDk21pSEr8","ff-short-options-trap":"e2z56dbpnZY","ff-short-live-300":"bPQ1nBz-DsE","ai-face-swap-mj":"-TIO4pM5xOQ"};
 const LOCAL={"ai-done":"media/ai-done.mp4"};
-const S=[{id:"s1",t:"圖表技術指標系列",d:"把交易指標拆解成一步步的動態圖解。",w:[
+const S=[{id:"s7",t:"Forex Forest Short 系列",d:"在 Forex Forest 任職時剪的商業短片與 YouTube Shorts。",w:[
+["ff-wayne-sir-success","問問 Wayne Sir：想成功，靠打工？","【問問Wayne Sir】探討成功路徑與 AI 如何改變人生選擇的商業短片。","5:06"],
+["ff-currency-pair-secret","為何高手總能預見貨幣對的秘密關係？","講解選對貨幣對與交易邏輯的 Forex Forest 商業短片。","7:13"],
+["ff-crystal-ball","市場水晶球：看穿走勢？","Wayne Sir 講解市場走勢預判與「水晶球」真身的商業短片。","2:53"],
+["ff-algo-trader-world","Algo Trader 世界隨行","AI 交易與環遊世界生活方式的 Forex Forest 宣傳短片。","3:36"],
+["ff-short-mona-freedom","真實事例：零經驗 OL 到財務自由","Forex Forest 學生 Mona 從手炒轉到程式交易的真實事例短片。","1:01"],
+["ff-short-142-return","程式交易 60 秒：3 個月內 142% 真倉回報","講解程式交易真倉回報的 Forex Forest 短片。","0:59"],
+["ff-short-options-trap","避坑股票期權：穩勝投資大揭秘","講解股票期權風險與穩勝投資的 Forex Forest 短片。","0:57"],
+["ff-short-live-300","直播同步觀看突破 300 人","Wayne Sir 直播人氣急升的 Forex Forest 宣傳短片。","0:21"]]},
+{id:"s5",t:"Forex Forest 系列",d:"在 Forex Forest 任職期間的直播。",w:[
+["ff-live-s10-queen-drive","Forex Forest S10 女皇駕到：暴利怪獸駕馭術","Forex Forest 直播：真正解放雙手、暴利怪獸駕馭術與超勝率公開。","79:29"],
+["ff-live-moodys-downgrade","穆迪下調美國信貸評級：危中有機","Forex Forest 直播：穆迪下調美國信貸評級後，Wayne Sir 講解睇準獲利時機。","60:36"]]},
+{id:"s1",t:"圖表技術指標系列",d:"把交易指標拆解成一步步的動態圖解。",w:[
 ["macd-intro-voiced","MACD 介紹（配音版）","以香港用字講解 MACD 指標的動態資訊圖解短片，附配音。","2:45"],
 ["rsi-intro-voiced","RSI 介紹（配音版）","講解 RSI 相對強弱指標的動態資訊圖解短片，附配音。","2:09"],
 ["bb-intro-voiced","布林通道介紹（配音版）","講解布林通道（Bollinger Bands）的動態資訊圖解短片，附配音。","2:13"],
@@ -10,17 +22,6 @@ const S=[{id:"s1",t:"圖表技術指標系列",d:"把交易指標拆解成一步
 ["why-invest","為什麼要投資","從通脹、複利到風險配置與行為偏誤，講解為什麼要投資的長篇科普片（普通話旁白＋配樂）。","21:10"]]},
 {id:"s4",t:"科普系列",d:"用動畫把抽象概念講清楚。",w:[
 ["transformer-text-vectors","Transformer 中的文字向量","用動畫講解 Transformer 如何把文字轉成向量，並在語意空間裡表示意義。","9:10"]]},
-{id:"s5",t:"Forex Forest 系列",d:"在 Forex Forest 任職影片剪輯時製作的商業短片。",w:[
-["ff-wayne-sir-success","問問 Wayne Sir：想成功，靠打工？","【問問Wayne Sir】探討成功路徑與 AI 如何改變人生選擇的商業短片。","5:06"],
-["ff-currency-pair-secret","為何高手總能預見貨幣對的秘密關係？","講解選對貨幣對與交易邏輯的 Forex Forest 商業短片。","7:13"],
-["ff-crystal-ball","市場水晶球：看穿走勢？","Wayne Sir 講解市場走勢預判與「水晶球」真身的商業短片。","2:53"],
-["ff-algo-trader-world","Algo Trader 世界隨行","AI 交易與環遊世界生活方式的 Forex Forest 宣傳短片。","3:36"],
-["ff-live-s10-queen-drive","Forex Forest S10 女皇駕到：暴利怪獸駕馭術","Forex Forest 直播：真正解放雙手、暴利怪獸駕馭術與超勝率公開。","79:29"],
-["ff-live-moodys-downgrade","穆迪下調美國信貸評級：危中有機","Forex Forest 直播：穆迪下調美國信貸評級後，Wayne Sir 講解睇準獲利時機。","60:36"],
-["ff-short-mona-freedom","真實事例：零經驗 OL 到財務自由","Forex Forest 學生 Mona 從手炒轉到程式交易的真實事例短片。","1:01"],
-["ff-short-142-return","程式交易 60 秒：3 個月內 142% 真倉回報","講解程式交易真倉回報的 Forex Forest 短片。","0:59"],
-["ff-short-options-trap","避坑股票期權：穩勝投資大揭秘","講解股票期權風險與穩勝投資的 Forex Forest 短片。","0:57"],
-["ff-short-live-300","直播同步觀看突破 300 人","Wayne Sir 直播人氣急升的 Forex Forest 宣傳短片。","0:21"]]},
 {id:"s6",t:"AI影片生成系列",d:"用 AI 工具生成與換臉／短片創作的實驗作品。",w:[
 ["ai-face-swap-mj","AI 換人MJ","AI 換人／換臉實驗短片。","1:25"],
 ["ai-done","該睡了","AI 生成短片：臥室場景下的戲劇對白與氛圍。","1:54"]]},
@@ -40,7 +41,7 @@ comfy:{name:"ComfyUI",src:"media/icons/comfyui.png"},
 minimax:{name:"MiniMax (H3)",src:"media/icons/minimax.svg"},
 seedance:{name:"Seedance",badge:"Sd",color:"#3C8CFF"}
 };
-const SERIES_TOOLS={s1:["grok","ae","pr"],s2:["grok","ae","pr"],s4:["grok","ae","pr"],s5:["ae","pr"],s6:["comfy","seedance","minimax","grok","ae","pr"]};
+const SERIES_TOOLS={s7:["ae","pr"],s5:["ae","pr"],s1:["grok","ae","pr"],s2:["grok","ae","pr"],s4:["grok","ae","pr"],s6:["comfy","seedance","minimax","grok","ae","pr"]};
 function toolsHtml(ids){if(!ids||!ids.length)return "";return `<span class="tools reveal">${ids.map(id=>{const t=TOOL[id];const tip=t.name.replaceAll('"','');if(t.badge)return `<span class="tool" data-tip="${tip}"><span class="tool-badge" style="--badge:${t.color}" role="img" aria-label="${tip}">${t.badge}</span></span>`;return `<span class="tool" data-tip="${tip}"><img class="${t.dark?"on-dark":""}" src="${t.src}" alt="${tip}"></span>`}).join("")}</span>`}
 const m=document.getElementById("works");
 S.forEach(s=>{const e=document.createElement("section");e.id=s.id;e.className="series";
