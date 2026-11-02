@@ -41,8 +41,8 @@ document.querySelectorAll('a[href^="#s"]').forEach(a=>{a.addEventListener("click
 if(location.hash)openSeries(location.hash,false);
 window.addEventListener("hashchange",()=>openSeries(location.hash,true));
 window.addEventListener("popstate",()=>openSeries(location.hash,true));
-const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.15});
-document.querySelectorAll(".series-copy .reveal").forEach(x=>io.observe(x));
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.08});
+document.querySelectorAll(".about .reveal, .series-copy .reveal").forEach(x=>io.observe(x));
 const lb=document.getElementById("lb"),v=lb.querySelector(".vid");
 function open(c){const src=LOCAL[c.dataset.f];v.innerHTML=src?`<video controls autoplay playsinline src="${src}"></video>`:`<iframe src="https://www.youtube-nocookie.com/embed/${YT[c.dataset.f]}?autoplay=1&rel=0" title="${c.dataset.t}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;lb.querySelector("h3").textContent=c.dataset.t;lb.querySelector("p").textContent=c.dataset.d;lb.hidden=false}
 function close(){const vid=v.querySelector("video");if(vid){vid.pause();vid.removeAttribute("src");vid.load()}v.innerHTML="";lb.hidden=true}
