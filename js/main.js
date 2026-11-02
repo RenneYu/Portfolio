@@ -29,11 +29,20 @@ const S=[{id:"s1",t:"圖表技術指標系列",d:"把交易指標拆解成一步
 ["contour-side-v2","等高線側面 v2","等高線線條側面造型動畫第二版。","0:12"],
 ["showcase","動畫技巧展示","程式碼動畫技巧綜合展示。","0:08"]]}];
 const m=document.getElementById("works");
-S.forEach(s=>{const e=document.createElement("section");e.id=s.id;
-e.innerHTML=`<h2 class="reveal">${s.t}</h2><p class="desc reveal">${s.d}</p><div class="grid">${s.w.map(([f,t,d,du],i)=>
-`<article class="card reveal" style="transition-delay:${i*80}ms" data-f="${f}" data-t="${t}" data-d="${d}" tabindex="0"><div class="thumb"><img loading="lazy" src="media/${f}_thumb.jpg" alt="${t}"><span class="play">▶</span><span class="dur">${du}</span></div><div class="info"><h3>${t}</h3><p>${d}</p></div></article>`).join("")}</div>`;m.appendChild(e)});
+S.forEach(s=>{const e=document.createElement("section");e.id=s.id;e.className="series";
+const cards=s.w.map(([f,t,d,du],i)=>`<article class="card reveal" style="transition-delay:${i*60}ms" data-f="${f}" data-t="${t}" data-d="${d}" tabindex="0"><div class="thumb"><img loading="lazy" src="media/${f}_thumb.jpg" alt="${t}"><span class="play">▶</span><span class="dur">${du}</span></div><div class="info"><h3>${t}</h3><p>${d}</p></div></article>`).join("");
+const fan=s.w.slice(0,3).map(([f])=>`<img src="media/${f}_thumb.jpg" alt="">`).join("");
+e.innerHTML=`<button class="series-toggle" type="button" aria-expanded="false" aria-controls="${s.id}-panel"><span class="series-copy"><h2 class="reveal">${s.t}</h2><p class="desc reveal">${s.d}</p><span class="series-meta"><b>${s.w.length} 部作品</b><span class="chev" aria-hidden="true"></span></span></span><span class="fan" aria-hidden="true">${fan}</span></button><div class="series-panel" id="${s.id}-panel" inert><div class="series-clip"><div class="grid">${cards}</div></div></div>`;
+m.appendChild(e)});
+function setOpen(sec,open){const btn=sec.querySelector(".series-toggle"),panel=sec.querySelector(".series-panel");sec.classList.toggle("is-open",open);btn.setAttribute("aria-expanded",open?"true":"false");if(open)panel.removeAttribute("inert");else panel.setAttribute("inert","");if(open)requestAnimationFrame(()=>panel.querySelectorAll(".reveal").forEach(x=>x.classList.add("in")))}
+document.querySelectorAll(".series-toggle").forEach(btn=>{btn.addEventListener("click",()=>{const sec=btn.closest(".series");setOpen(sec,btn.getAttribute("aria-expanded")!=="true")})});
+function openSeries(hash,scroll){const sec=document.getElementById((hash||"").replace("#",""));if(!sec||!sec.classList.contains("series"))return false;setOpen(sec,true);if(scroll)sec.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});return true}
+document.querySelectorAll('a[href^="#s"]').forEach(a=>{a.addEventListener("click",ev=>{const href=a.getAttribute("href");if(!openSeries(href,true))return;ev.preventDefault();history.pushState(null,"",href)})});
+if(location.hash)openSeries(location.hash,false);
+window.addEventListener("hashchange",()=>openSeries(location.hash,true));
+window.addEventListener("popstate",()=>openSeries(location.hash,true));
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.15});
-document.querySelectorAll(".reveal").forEach(x=>io.observe(x));
+document.querySelectorAll(".series-copy .reveal").forEach(x=>io.observe(x));
 const lb=document.getElementById("lb"),v=lb.querySelector(".vid");
 function open(c){const src=LOCAL[c.dataset.f];v.innerHTML=src?`<video controls autoplay playsinline src="${src}"></video>`:`<iframe src="https://www.youtube-nocookie.com/embed/${YT[c.dataset.f]}?autoplay=1&rel=0" title="${c.dataset.t}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;lb.querySelector("h3").textContent=c.dataset.t;lb.querySelector("p").textContent=c.dataset.d;lb.hidden=false}
 function close(){const vid=v.querySelector("video");if(vid){vid.pause();vid.removeAttribute("src");vid.load()}v.innerHTML="";lb.hidden=true}
